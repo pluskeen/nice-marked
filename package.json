@@ -1,8 +1,8 @@
 {
-  "name": "marked",
-  "description": "A markdown parser built for speed",
-  "author": "Christopher Jeffrey",
-  "version": "4.0.14",
+  "name": "nice-marked",
+  "description": "marked extend for obsidian note",
+  "author": "dengpei",
+  "version": "0.0.1",
   "type": "module",
   "main": "./lib/marked.cjs",
   "module": "./lib/marked.esm.js",
@@ -25,10 +25,10 @@
     },
     "./package.json": "./package.json"
   },
-  "repository": "git://github.com/markedjs/marked.git",
+  "repository": "git://github.com/pluskeen/nice-marked",
   "homepage": "https://marked.js.org",
   "bugs": {
-    "url": "http://github.com/markedjs/marked/issues"
+    "url": "http://github.com/pluskeen/nice-marked/issues"
   },
   "license": "MIT",
   "keywords": [
