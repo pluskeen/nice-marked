@@ -18,7 +18,9 @@ export function getDefaults() {
     smartypants: false,
     tokenizer: null,
     walkTokens: null,
-    xhtml: false
+    xhtml: false,
+    // 新增的图片地址配置
+    obsidianImageUrl: null
   };
 }
 

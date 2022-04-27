@@ -70,6 +70,17 @@ export class Tokenizer {
     this.options = options || defaults;
   }
 
+  obsidianImage(src) {
+    const cap = this.rules.inline.obsidianImage.exec(src);
+    if (cap && cap[0].length > 0) {
+      return {
+        type: 'obsidianImage',
+        raw: cap[0],
+        text: cap[1]
+      };
+    }
+  }
+
   space(src) {
     const cap = this.rules.block.newline.exec(src);
     if (cap && cap[0].length > 0) {
@@ -563,7 +574,7 @@ export class Tokenizer {
   reflink(src, links) {
     let cap;
     if ((cap = this.rules.inline.reflink.exec(src))
-        || (cap = this.rules.inline.nolink.exec(src))) {
+      || (cap = this.rules.inline.nolink.exec(src))) {
       let link = (cap[2] || cap[1]).replace(/\s+/g, ' ');
       link = links[link.toLowerCase()];
       if (!link || !link.href) {

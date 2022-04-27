@@ -372,6 +372,13 @@ export class Lexer {
         continue;
       }
 
+      // obsidianImage
+      if (token = this.tokenizer.obsidianImage(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+
       // escape
       if (token = this.tokenizer.escape(src)) {
         src = src.substring(token.raw.length);

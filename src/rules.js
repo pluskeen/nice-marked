@@ -152,6 +152,7 @@ block.pedantic = merge({}, block.normal, {
  * Inline-Level Grammar
  */
 export const inline = {
+  obsidianImage: /^!\[\[(\S+)]](?:\n|$)/,
   escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
   autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
   url: noopTest,

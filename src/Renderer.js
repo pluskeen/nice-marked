@@ -12,6 +12,22 @@ export class Renderer {
     this.options = options || defaults;
   }
 
+  /**
+   * @param {string} text
+   */
+  obsidianImage(text) {
+    // const href = cleanUrl(this.options.sanitize, this.options.obsidianImageUrl, text);
+    const href = this.options.obsidianImageUrl + text;
+    if (href === null) {
+      return text;
+    }
+
+    let out = `<img src="${href}" alt="${text}"`;
+
+    out += this.options.xhtml ? '/>' : '>';
+    return out;
+  }
+
   code(code, infostring, escaped) {
     const lang = (infostring || '').match(/\S*/)[0];
     if (this.options.highlight) {
